@@ -25,6 +25,8 @@ nav
     flex: 1;
     text-align: center;
     padding-top: 6px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
 }
 nav ul 
 {
@@ -43,4 +45,20 @@ nav ul li a
     color: rgb(78, 45, 7);
     font-family: sans-serif;
     font-weight: bold;
+}
+.postProfileImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+
+}
+.propDetails{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.details{
+    font-size: 20px;
 }

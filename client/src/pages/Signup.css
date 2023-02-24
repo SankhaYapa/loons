@@ -4,10 +4,12 @@
 {
     width: 450px;
     height: 500px;
-    position: absolute;
-    bottom: 90px;
-    left: 550px;
+   
     background: rgba(240, 236, 236, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .main-heading
 {

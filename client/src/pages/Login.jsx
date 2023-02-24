@@ -10,12 +10,13 @@ export const Login = () => {
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const handleClick = (e) => {
     e.preventDefault();
-    // console.log(email.current.value);
+    console.log(email.current.value);
     loginCall(
       { email: email.current.value, password: password.current.value },
       dispatch
     );
   };
+  console.log(user);
   return (
     <div id="login-form" class="login-page">
       <div class="form-box">

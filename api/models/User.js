@@ -22,11 +22,11 @@ const UserSchema = new mongoose.Schema(
     phone:{
       type: String,
       required: true,
-    }
-    // img: {
-    //   type: String,
-    //   required: false,
-    // },
+    },
+    image: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );

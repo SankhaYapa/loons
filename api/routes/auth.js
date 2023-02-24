@@ -2,7 +2,18 @@ const router = require("express").Router();
 const User = require("../models/User");
 
 const bcrypt = require("bcrypt");
+const multer = require("multer");
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 //register
 router.post("/register", async (req, res) => {
 
@@ -10,6 +21,7 @@ router.post("/register", async (req, res) => {
     //generate ne password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    
     //create new user
     const newUser = new User({
       firstname: req.body.firstname,
@@ -17,7 +29,9 @@ router.post("/register", async (req, res) => {
       email: req.body.email,
       password: hashedPassword,
       phone: req.body.phone,
+      image:req.body.image
     });
+    console.log(newUser.phone)
 
     //save user and return response
     const user = await newUser.save();
